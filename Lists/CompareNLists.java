@@ -34,21 +34,22 @@ public class CompareNLists {
          */
         for (int i = 0; i < lists.getSize(); i++) {          
             int[] temp1 = lists.getArray(i);
-            
             /* For loop up to the number of items to compare. Retrieve and store
              * a list from the j index (where j = i + 1) in a temporary local variable.
              */
             for (int j = i + 1; j < lists.getSize(); j++) {   
-            int[] temp2 = lists.getArray(j);
-            
+            int[] temp2 = lists.getArray(j); 
             /* For loop up to the number of elements in the i index of 
              * the first array from the StoreLists object.
              */
-                for (int k = 0; k < temp1.length; k++) {   
+                for (int k = 0; k < temp1.length; k++) { 
                     /* For loop up to the number of elements in the j index 
                      * of the second array from the StoreLists object.
                      */
                     for (int l = 0; l < temp2.length ; l++) {
+                        /* Comparison of each element in the k and l index of
+                         * i and j lists from the StoreLists object.
+                         */
                         if (temp1[k] == temp2[l]){
                             System.out.println("Match found at indicies: ("+ k + ", " + l + ")");
                             System.out.print("Array " + names[i] + ": " + temp1[k] + " Array ");
