@@ -1,6 +1,12 @@
+/**
+* Below is the DuplicateTesting class that contains a main method and a hasDuplicates method.
+* The main method below creates a list object, adds elements to it, and calls the hasDuplicates
+* method several times to test it its functionality. The program begins running in the main 
+* method below.
+*/
 import java.util.ArrayList;
 
-public class Main {
+public class DuplicateTesting {
 
     public static void main(String[] args) {
 
