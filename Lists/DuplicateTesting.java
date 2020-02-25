@@ -86,11 +86,12 @@ public class DuplicateTesting {
      */
     public static boolean hasDuplicates(ArrayList<Integer> list){
         boolean hasDuplicates = false;
-        for (int i = 0; i < list.size() - 1; i++) {
+        for (int i = 0; i < list.size(); i++) {
             int firstElement = list.get(i);
-            for (int j = i + 1; j < list.size(); j++) {
+            for (int j = i + 1; j < list.size(); j++) {   // Note: j is set to equal i + 1
                 int secondElement = list.get(j);
-                if (firstElement == secondElement){
+                // If the first element selected equals the second element selected
+                if (firstElement == secondElement){    
                     hasDuplicates = true;
                 }
             }
