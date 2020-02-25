@@ -75,6 +75,11 @@ public class DuplicateTesting {
         intList.add(6);
         System.out.println("Expecting true");
         System.out.println("Algorithm output: " + hasDuplicates(intList) + "\n");
+        
+        intList.clear();    // Clearing the list
+
+        System.out.println("Expecting false");
+        System.out.println("Algorithm output: " + hasDuplicates(intList) + "\n");
 
     }
 
@@ -86,13 +91,15 @@ public class DuplicateTesting {
      */
     public static boolean hasDuplicates(ArrayList<Integer> list){
         boolean hasDuplicates = false;
-        for (int i = 0; i < list.size(); i++) {
-            int firstElement = list.get(i);
-            for (int j = i + 1; j < list.size(); j++) {   // Note: j is set to equal i + 1
-                int secondElement = list.get(j);
-                // If the first element selected equals the second element selected
-                if (firstElement == secondElement){    
-                    hasDuplicates = true;
+        if(list.size() > 0){
+            for (int i = 0; i < list.size(); i++) {
+                int firstElement = list.get(i);
+                for (int j = i + 1; j < list.size(); j++) {   // Note: j is set to equal i + 1
+                    int secondElement = list.get(j);
+                    // If the first element selected equals the second element selected
+                    if (firstElement == secondElement){    
+                        hasDuplicates = true;
+                    }
                 }
             }
         }
