@@ -9,7 +9,7 @@ public class CompareNLists {
 
     public static void main(String[] args) {
 
-        // Creating 4 integer arrays with the following elements.
+       // Creating 4 integer arrays with the following elements.
         int[] a = {1,2,3,1};
         int[] b = {2,3,1};
         int[] c = {3,1,2};
@@ -17,42 +17,42 @@ public class CompareNLists {
 
         // Creating an adjacent String array to track the integer array names.
         String[] names = {"A","B","C","D"};
-        
+
         int numOfArrays = 4;
 
-        /* Instantiating a StoreLists object and adding each integer array
-         * to the object.
+        /* Instantiating a listOfLists ArrayList object and adding each integer
+         array to it.
          */
-        StoreLists lists = new StoreLists(4);
-        lists.add(a);
-        lists.add(b);
-        lists.add(c);
-        lists.add(d);
+        ArrayList<int[]> listOfLists = new ArrayList<int[]>();
+        listOfLists.add(a);
+        listOfLists.add(b);
+        listOfLists.add(c);
+        listOfLists.add(d);
 
         /* For loop up to number of items to compare. Retrieve and store
          * a list from the i index in a temporary local variable.
          */
-        for (int i = 0; i < lists.getSize(); i++) {          
-            int[] temp1 = lists.getArray(i);
-            
+        for (int i = 0; i < listOfLists.size(); i++) {
+            int[] temp1 = listOfLists.get(i);
+
             /* For loop up to the number of items to compare. Retrieve and store
              * a list from the j index (where j = i + 1) in a temporary local variable.
              */
-            for (int j = i + 1; j < lists.getSize(); j++) {   
-            int[] temp2 = lists.getArray(j); 
-                
-            /* For loop up to the number of elements in the i index of 
-             * the first array from the StoreLists object.
-             */
-                for (int k = 0; k < temp1.length; k++) { 
-                    
-                    /* For loop up to the number of elements in the j index 
-                     * of the second array from the StoreLists object.
+            for (int j = i + 1; j < listOfLists.size(); j++) {
+                int[] temp2 = listOfLists.get(j);
+
+                /* For loop up to the number of elements in the i index of
+                 * the first array from the listOfLists object.
+                 */
+                for (int k = 0; k < temp1.length; k++) {
+
+                    /* For loop up to the number of elements in the j index
+                     * of the second array from the listOfLists object.
                      */
                     for (int l = 0; l < temp2.length ; l++) {
-                        
+
                         /* Comparison of each element in the k and l index of
-                         * i and j lists from the StoreLists object.
+                         * i and j lists from the listOfLists object.
                          */
                         if (temp1[k] == temp2[l]){
                             System.out.println("Match found at indicies: ("+ k + ", " + l + ")");
@@ -63,6 +63,5 @@ public class CompareNLists {
                 }
             }
         }
-        
     }
 }
