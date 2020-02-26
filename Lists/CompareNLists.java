@@ -3,7 +3,8 @@
  * items to each other without duplicating comparisons. For example, with lists
  * A, B, and C, the algorithm below compares (AB), (AC), and (BC), and so on
  * for N lists. Below is the main method where the program begins at run time.
- * The CompareNLists class below also uses the StoreLists class.
+ * NOTE: The CompareNLists class below uses an ArrayList structure to assist with
+ * this algorithm.
  */
 public class CompareNLists {
 
