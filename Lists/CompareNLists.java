@@ -1,5 +1,5 @@
 /**
- * This program is written to provide an algorithm to compare 3 or lists of
+ * This program is written to provide an algorithm to compare N lists of
  * items to each other without duplicating comparisons. For example, with lists
  * A, B, and C, the algorithm below compares (AB), (AC), and (BC), and so on
  * for N lists. Below is the main method where the program begins at run time.
@@ -19,10 +19,8 @@ public class CompareNLists {
         // Creating an adjacent String array to track the integer array names.
         String[] names = {"A","B","C","D"};
 
-        int numOfArrays = 4;
-
         /* Instantiating a listOfLists ArrayList object and adding each integer
-         array to it.
+         * array to it.
          */
         ArrayList<int[]> listOfLists = new ArrayList<int[]>();
         listOfLists.add(a);
@@ -65,4 +63,5 @@ public class CompareNLists {
             }
         }
     }
+    
 }
