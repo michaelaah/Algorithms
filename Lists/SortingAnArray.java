@@ -1,5 +1,3 @@
-
-
 /**
  * The algorithm below sorts an integer array in ascendig order
  * (where the lowest integer is at the top of the array or in the first index).
@@ -18,7 +16,13 @@ public class SortingAnArray {
         }
         System.out.print("\n");
 
-        // Below is a sorting algorithm.
+        /* Below is the algorithm that performs the sorting.
+         * The sorting algorithm below consists of a nested for loop
+         * with the nested for loop having the iterator equal to the
+         * first for loop's iterator + 1. (as denoted below, j = i + 1).
+         * if the if condition is true, the elements in indexes i and j
+         * are switched, else the loop continues to iterate.
+         */
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if(array[i] > array[j]){
