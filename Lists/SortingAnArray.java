@@ -1,7 +1,8 @@
 
 
 /**
- * The algorithm below sorts an integer array.
+ * The algorithm below sorts an integer array in ascendig order
+ * (where the lowest integer is at the top of the array or in the first index).
  */
 public class SortingAnArray {
 
