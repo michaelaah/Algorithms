@@ -58,12 +58,13 @@ public class Main {
     }
 
     /**
-     * 
-     * @param array
-     * @param low
-     * @param high
-     * @param target
-     * @return
+     * The BinarySearch method searches a sorted integer array and returns 
+     * true if the element being searched for is found, else false is returned.
+     * @param array The array to perform the search on
+     * @param low The lowest index to begin the search from
+     * @param high The highest index to begin the search at - typically array.length
+     * @param target The element to search for
+     * @return true of the element is found within the array, else false
      */
     public static boolean BinarySearch(int[] array, int low, int high, int target){
         if (high >= low){
