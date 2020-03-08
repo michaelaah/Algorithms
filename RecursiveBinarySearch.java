@@ -29,31 +29,31 @@ public class RecursiveBinarySearch {
          */
         int target = 0;
         System.out.println(BinarySearch(array,low,high,target));
-        System.out.println("Expected: true");
+        System.out.println("Expected: " + (target >= low && target <= array.length -1));
 
          target = 181;
         System.out.println(BinarySearch(array,low,high,target));
-        System.out.println("Expected: false");
+        System.out.println("Expected: " + (target >= low && target <= array.length -1));
 
         target = 9;
         System.out.println(BinarySearch(array,low,high,target));
-        System.out.println("Expected: true");
+        System.out.println("Expected: " + (target >= low && target <= array.length -1));
 
         target = -12;
         System.out.println(BinarySearch(array,low,high,target));
-        System.out.println("Expected: false");
+        System.out.println("Expected: " + (target >= low && target <= array.length -1));
 
         target = 89;
         System.out.println(BinarySearch(array,low,high,target));
-        System.out.println("Expected: true");
+        System.out.println("Expected: " + (target >= low && target <= array.length -1));
 
         target = 99;
         System.out.println(BinarySearch(array,low,high,target));
-        System.out.println("Expected: true");
+        System.out.println("Expected: " + (target >= low && target <= array.length -1));
 
         target = 100;
         System.out.println(BinarySearch(array,low,high,target));
-        System.out.println("Expected: false");
+        System.out.println("Expected: " + (target >= low && target <= array.length -1));
 
     }
 
