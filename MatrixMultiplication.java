@@ -24,26 +24,39 @@ public class MatrixMultiplication {
      */
     public static double [][] multiplyMatrices (double [][] matrix1, double [][] matrix2) {
 
-            if (matrix1[0].length == matrix2.length){
-                double[][] matrix = new double[matrix1.length][matrix2[0].length];
+        // If the number of the rows of matrix1 are equal to the number of columns of matrix2.
+        if (matrix1[0].length == matrix2.length){
+            
+            /* 
+            * Instantiate a local matrix variable with the number of rows as the number of rows 
+            * of matrix 1 and the number of columns as the number of columns of matrix2. 
+            */
+            double[][] matrix = new double[matrix1.length][matrix2[0].length];
 
-                for (int i = 0; i < matrix1.length; i++) {
-                    for (int j = 0; j < matrix2[0].length; j++) {
-                        for (int k = 0; k < matrix1[0].length; k++) {
+            /**
+            * First for loop set to iterate until the number of rows of matrix1, the second until
+            * the number of columns of matrix2, and the third for loop until the number of rows of
+            * matrix1.
+            */
+            for (int i = 0; i < matrix1.length; i++) {
+                for (int j = 0; j < matrix2[0].length; j++) {
+                    for (int k = 0; k < matrix1[0].length; k++) {
 
-                            matrix[i][j] += matrix1[i][k] * matrix2[k][j];
-                        }
+                        matrix[i][j] += matrix1[i][k] * matrix2[k][j];
                     }
                 }
+            }
 
-                return matrix;
+            return matrix;
 
-            } else {
+            // Else, the number of rows of matrix1 are not equal to the number of columns of matrix2.
+        } else {
 
-                throw new IndexOutOfBoundsException("\nIncompatible matrices" +
-                        " for multiplication.\nNumber of rows of the first " +
-                        "matrix must be the same as the number of columns of" +
-                        " the second matrix.");
+            // Create and throw the below exception.
+            throw new IndexOutOfBoundsException("\nIncompatible matrices" +
+                    " for multiplication.\nNumber of rows of the first " +
+                    "matrix must be the same as the number of columns of" +
+                    " the second matrix.");
         }
     }
 
