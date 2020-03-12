@@ -47,6 +47,7 @@ public class MatrixMultiplication {
                 }
             }
 
+            // Return the matrix variable to the client.
             return matrix;
 
             // Else, the number of rows of matrix1 are not equal to the number of columns of matrix2.
@@ -66,15 +67,22 @@ public class MatrixMultiplication {
      * @return A String representation of the matrix parameter
      */
     public static String stringMatrix (double[][] matrix){
-        String toPrint = "";
+        String toPrint = "";         // Declare local String variable to append to.
+        
+        // Double for loop to iterate over the matrix (2D array).
         for (int i = 0; i < matrix.length ; i++) {
             for (int j = 0; j < matrix[0].length ; j++) {
+                
+                // Format and append each element of the of the matrix to the local variable.
                 String element = String.format("%.0f",matrix[i][j]);
+                // Append a tab character to the String variable for formatting.
                 toPrint += element + "\t";
             }
+            // Append a new line character to represent the next row on a new line.
             toPrint += "\n";
         }
 
+        // Return the String variable to the client.
         return toPrint;
     }
 }
