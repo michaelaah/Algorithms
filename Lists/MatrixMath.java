@@ -1,4 +1,8 @@
-
+/**
+* The program below displays the algorithms to multiply and add two matricies.
+* The algorithms to multiply and add two matricies are listed as static methods below
+* the main method below.
+*/
 public class MatrixMath {
 
     public static void main(String[] args) {
