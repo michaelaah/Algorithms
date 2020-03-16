@@ -1,7 +1,7 @@
 /**
-* The program below displays the algorithms to multiply and add two matricies.
-* The algorithms to multiply and add two matricies are listed as static methods below
-* the main method below.
+* The program below displays the algorithms to multiply, add, and subtract two matricies.
+* The algorithms to multiply, add, and subtract two matricies are listed as static methods
+* below the main method below.
 */
 public class MatrixMath {
 
@@ -22,6 +22,7 @@ public class MatrixMath {
         double[][] matrix4 = {{2,5},
                               {4,3}};
         
+        // Declaring 2D array variables matrix5 and matrix6 to be subtracted.
         double[][] matrix5 = {{1,4},
                               {10,-4}};
 
@@ -29,8 +30,8 @@ public class MatrixMath {
                               {4,-3}};
         
         
-        /* Declaring a local variable to call the multiplyMatrices and addMatrices 
-         * methods and print the returned matrix values.
+        /* Declaring a local variable to call the multiplyMatrices, addMatrices,
+         * and subtractMatricies methods, and print the returned matrix values.
          */
         double[][] result = multiplyMatrices(matrix1,matrix2);
         System.out.println(stringMatrix(result));
