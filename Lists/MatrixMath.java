@@ -6,19 +6,26 @@
 public class MatrixMath {
 
     public static void main(String[] args) {
+        
+        // Declaring 2D array variables matrix1 and matrix2 to be multiplied.
         double[][] matrix1 = {{2,3,1},
                              {2,-7,4}};
 
         double[][] matrix2 = {{3,4,5},
                               {1,1,4},
                               {2,1,4}};
-
+        
+        // Declaring 2D array variables matrix3 and matrix4 to be added.
         double[][] matrix3 = {{7,-1},
                               {5,-4}};
 
         double[][] matrix4 = {{2,5},
                               {4,3}};
-
+        
+        
+        /* Declaring a local variable to call the multiplyMatrices and addMatrices 
+         * methods and print the returned matrix values.
+         */
         double[][] result = multiplyMatrices(matrix1,matrix2);
         System.out.println(stringMatrix(result));
 
@@ -62,7 +69,8 @@ public class MatrixMath {
 
     /**
      * The addMatricies method take two matricies as parameters, adds them
-     * together, and returns a matrix 2D array with the values added.
+     * together, and returns a 2D array (matrix) with the values added. If the
+     * two matricies are not compatible to be added an exception is thown.
      * @param matrix1 The first matrix to add to the second
      * @param matrix2 The second matrix to add to the first
      * @return A matrix containing the result of adding matrix1 with matrix2
