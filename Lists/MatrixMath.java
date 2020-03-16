@@ -22,6 +22,12 @@ public class MatrixMath {
         double[][] matrix4 = {{2,5},
                               {4,3}};
         
+        double[][] matrix5 = {{1,4},
+                              {10,-4}};
+
+        double[][] matrix6 = {{6,3},
+                              {4,-3}};
+        
         
         /* Declaring a local variable to call the multiplyMatrices and addMatrices 
          * methods and print the returned matrix values.
@@ -31,6 +37,9 @@ public class MatrixMath {
 
         double[][] result2 = addMatricies(matrix3,matrix4);
         System.out.println(stringMatrix(result2));
+        
+        double[][] result3 = subtractMatricies(matrix5,matrix6);
+        System.out.println(stringMatrix(result3));
     }
 
     /**
@@ -68,7 +77,7 @@ public class MatrixMath {
     }
 
     /**
-     * The addMatricies method take two matricies as parameters, adds them
+     * The addMatricies method takes two matricies as parameters, adds them
      * together, and returns a 2D array (matrix) with the values added. If the
      * two matricies are not compatible to be added an exception is thown.
      * @param matrix1 The first matrix to add to the second
@@ -89,6 +98,34 @@ public class MatrixMath {
             for (int i = 0; i < matrix1.length; i++) {
                 for (int j = 0; j < matrix2.length; j++) {
                     matrix[i][j] = matrix1[i][j] + matrix2[i][j];
+                }
+            }
+
+            return matrix;
+        }
+    }
+    
+    /**
+     * The subtractMatricies method takes two matricies as parameters, subtracts
+     * them from each other, and returns a 2D array with the values subtracted.
+     * @param matrix1 The first matrix to subtract the second
+     * @param matrix2 The second matrix to subtract from the first
+     * @return A matrix containing the result of subtracting matrix2 from matrix1
+     */
+    public static double [][] subtractMatricies (double [][] matrix1, double [][] matrix2){
+
+        if (matrix1.length != matrix2.length || matrix1[0].length != matrix2[0].length){
+            throw new IndexOutOfBoundsException("\nIncompatible matrices" +
+                    " for subtraction.\nNumber of rows and columns of the first "
+                    + "matrix must be the same as the number of rows and "
+                    + "columns of the second matrix.");
+        } else {
+
+            double [][] matrix = new double[matrix1.length][matrix2.length];
+
+            for (int i = 0; i < matrix1.length; i++) {
+                for (int j = 0; j < matrix2.length; j++) {
+                    matrix[i][j] = matrix1[i][j] - matrix2[i][j];
                 }
             }
 
