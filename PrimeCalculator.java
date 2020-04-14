@@ -1,7 +1,8 @@
 /**
- * This class provides helpful methods for getting prime numbers and testing
- * if a given number is prime. Note: prime numbers are integers greater than
- * one with no positive divisors besides one and itself.
+ * This class provides helpful methods for getting prime numbers, testing
+ * if a given number is prime, and getting a list of the prime factors of 
+ * a given number. Note: prime numbers are integers greater than one with
+ * no positive divisors besides one and itself.
  */
 import java.util.ArrayList;
 
