@@ -144,7 +144,7 @@ public class PrimeCalculator {
       if (num % divisor == 0) {
         int quotient = num / divisor;
         primeList.add(divisor);
-        getFactors(primeList, quotient);
+        getFactors(primeList,quotient);
         
       } else {
         while (num % divisor != 0) {
