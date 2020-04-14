@@ -108,7 +108,12 @@ public class PrimeCalculator {
     return listOfPrimes;
   }
   
-  
+  /**
+   * The getPrimeFactors method returns a list of prime factors for a given
+   * parameter variable.
+   * @param num The number to get the prime factors of
+   * @return An ArrayList of prime factors
+   */
   public ArrayList<Integer> getPrimeFactors(int num){
     ArrayList<Integer> primeList = new ArrayList<Integer>();
     if (isPrime(num)){
@@ -124,7 +129,12 @@ public class PrimeCalculator {
     }
   }
   
-  
+  /**
+   * The getFactors method fills a parameter ArrayList variable with the
+   * prime factors of the given int parameter variable.
+   * @param primeList The list to add the prime factors to
+   * @param num The integer to find the prime factors of
+   */
   private void getFactors(ArrayList<Integer> primeList, int num) {
     if (isPrime(num)) {
       primeList.add(num);
