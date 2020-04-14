@@ -107,5 +107,52 @@ public class PrimeCalculator {
 
     return listOfPrimes;
   }
+  
+  
+  public ArrayList<Integer> getPrimeFactors(int num){
+    ArrayList<Integer> primeList = new ArrayList<Integer>();
+    if (isPrime(num)){
+      primeList.add(num);
+      primeList.add(1);
+      
+      return primeList;
+      
+    } else {
+      getFactors(primeList,num);
+      
+      return primeList;
+    }
+  }
+  
+  
+  private void getFactors(ArrayList<Integer> primeList, int num) {
+    if (isPrime(num)) {
+      primeList.add(num);
+      
+    } else {
+      int divisor = 2;
+      if (num % divisor == 0) {
+        int quotient = num / divisor;
+        primeList.add(divisor);
+        getFactors(primeList, quotient);
+        
+      } else {
+        while (num % divisor != 0) {
+          divisor++;
+        }
+        
+        int quotient = num / divisor;
+        primeList.add(divisor);
+        if (! isPrime(quotient)){
+          getFactors(primeList,quotient);
+          
+        } else {
+          if (isPrime(quotient)) {
+            primeList.add(quotient);
+          }
+        }
+      }
+    }
+  }
 
 }
