@@ -36,9 +36,11 @@ public class BitwiseOperators {
         int leftShift = wigit << 3;  // 3 represents the number of bits you want to shift left
         System.out.println("Left Shift: " + leftShift);
         // Expecting 0001 0101 0000 = 2^8 + 2^6 + 2^4 = 336
+        // 42 shifted left 3 binary digits becomes 336.
         
         int rightShit = wigit >> 2; // 2 represents the number of bits you want to shift right
         System.out.println("Right Shift: " + rightShit);
         // Expecting 0000 1010 = 2^3 + 2^1 = 10
+        // 42 shifted right 2 binary digits becomes 10.
     }
 }
