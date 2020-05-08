@@ -27,7 +27,7 @@ public class BitwiseOperators {
 
         int xOr = wigit ^ figit;
         System.out.println("Xor: " + xOr);
-        // Expecting 0011 0111 = 2^5 + 2^4 + + 2^2 + 2^1 + 2^0 = 55
+        // Expecting 0011 0111 = 2^5 + 2^4 + 2^2 + 2^1 + 2^0 = 55
 
         int oneComp = ~ wigit;
         System.out.println("Ones Compliment: " + oneComp);
