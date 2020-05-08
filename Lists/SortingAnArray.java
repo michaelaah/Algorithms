@@ -33,7 +33,7 @@ public class SortingAnArray {
             }
         }
         
-        // Printing out te array after running the sorting algorithm.
+        // Printing out the array after running the sorting algorithm.
         System.out.print("Sorted Array: ");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
