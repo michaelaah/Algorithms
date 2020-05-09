@@ -16,7 +16,7 @@ public class SetOperations {
   public SetOperations(){}
 
   /**
-   * The hasDuplicates method tests if any one element has a duplicate in the
+   * The hasDuplicates method tests if any one element is duplicated in the
    * parameter array.
    * @param intArray The array to search for a duplicate in
    * @return True, if a duplicate is found
@@ -39,7 +39,7 @@ public class SetOperations {
   }
 
   /**
-   * The removeDUplicates method removes duplicates from a parameter array.
+   * The removeDuplicates method removes duplicates from a parameter array.
    * @param intArray The array to remove duplicates from
    * @return An array without duplicates
    */
@@ -70,9 +70,9 @@ public class SetOperations {
   }
 
   /**
-   * The getNumberOfDuplicates method returns the number of duplicate elements
+   * The getNumberOfDuplicates method returns the number of duplicated elements
    * in the parameter array.
-   * @param intArray The array to count the duplicates in
+   * @param intArray The array to count the number of duplicates in
    * @return The integer amount of duplicated elements in the parameter array
    */
   public int getNumberOfDuplicates(int[] intArray){
@@ -118,7 +118,8 @@ public class SetOperations {
      */
     ArrayList<String> stringList = new ArrayList<String>();
     int size = intArray.length;
-    String element = "";
+    String element = "";  // String variable to append to as the array is traversed.
+    
     for (int i = 0; i < (1 << size); i++) {
       element += "{ ";
       for (int j = 0; j < size; j++) {
@@ -221,7 +222,7 @@ public class SetOperations {
   }
 
   /**
-   * The isSubSet method determines if the given subset parameter variable
+   * The isSubset method determines if the given subset parameter variable
    * is a subset of the set parameter variable.
    * @param subset The subset to test if it is a subset
    * @param set The set of the set to test if it contains a matching
@@ -253,7 +254,7 @@ public class SetOperations {
   }
 
   /**
-   * The isSubSet method determines if the given subset parameter variable
+   * The isSubset method determines if the given subset parameter variable
    * is a subset of the set parameter variable.
    * @param subset The subset to test if it is a subset
    * @param powerSet The powerSet of the set to test if it contains a matching
