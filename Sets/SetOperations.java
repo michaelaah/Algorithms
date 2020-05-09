@@ -1,6 +1,6 @@
 /*
  * The SetOperations class implements several Set mathematical operations.
- * (searching a list for duplicates, getting a list og duplicates, removing
+ * (searching a list for duplicates, getting a list of duplicates, removing
  * duplicates from a list, union operation, intersection operation, power set
  * operation, combining two arrays, subset operation, and strict subset operation).
  * Note: This class uses arrays and ArrayLists to help implement sets and set
