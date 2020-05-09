@@ -3,6 +3,7 @@
 A collection of algorithms.
 
 More Specifically:
+
   Prime Numbers:
   - Testing if a number is prime
   - Getting the next higher prime number
@@ -20,7 +21,15 @@ More Specifically:
   - For example, with lists A, B, and C, this algorithm 
   - compares (AB), (AC), and (BC), and so on for N lists
   
+  Determining if a list of elements has duplicates or not
   
-  
-  
-  
+  Set Operations
+  - Searching a list for duplicates 
+  - Getting a list of duplicates 
+  - Removing duplicates from a list
+  - Union operation 
+  - Intersection operation 
+  - Power set operation
+  - Combining two arrays 
+  - Subset operation
+  - Strict subset operation
