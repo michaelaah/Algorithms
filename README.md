@@ -12,7 +12,7 @@ More Specifically:
   
   Recursive Binary Search
   
-  Bitwise Operations
+  Bitwise Operations:
   - And, Or, Xor, Left shift, Right shift
   
   Matrix Math
@@ -23,14 +23,17 @@ More Specifically:
   
   Determining if a list of elements has duplicates or not
   
-  Set Operations
-  - Searching a list for duplicates 
-  - Getting a list of duplicates 
-  - Removing duplicates from a list
-  - Union operation 
-  - Intersection operation 
-  - Power set operation
-  - Combining two arrays 
-  - Subset operation
-  - Strict subset operation
-  - Difference operation
+  Set Operations and Algorithms:
+    Algorithms:
+    - Searching a list for duplicates 
+    - Getting a list of duplicates 
+    - Removing duplicates from a list
+    - Combining two arrays 
+    - Array contains method
+   Set Operations:
+    - Union operation 
+    - Intersection operation 
+    - Power set operation
+    - Subset operation
+    - Strict subset operation
+    - Difference operation
