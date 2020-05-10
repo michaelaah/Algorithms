@@ -26,16 +26,16 @@ More Specifically:
   Set Operations and Algorithms:
     
    Algorithms:
-    - Searching a list for duplicates 
-    - Getting a list of duplicates 
-    - Removing duplicates from a list
-    - Combining two arrays 
-    - Array contains method
+     - Searching a list for duplicates 
+     - Getting a list of duplicates 
+     - Removing duplicates from a list
+     - Combining two arrays 
+     - Array contains method
    
    Set Operations:
-    - Union operation 
-    - Intersection operation 
-    - Power set operation
-    - Subset operation
-    - Strict subset operation
-    - Difference operation
+     - Union operation 
+     - Intersection operation 
+     - Power set operation
+     - Subset operation
+     - Strict subset operation
+     - Difference operation
