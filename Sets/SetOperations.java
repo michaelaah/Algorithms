@@ -315,5 +315,46 @@ public class SetOperations {
     }
 
   }
+  
+  /**
+   * The difference method performs the Set difference operation on two set
+   * parameter variables.
+   * @param array1 The minuend of the set difference operation
+   * @param array2 The subtrahend of the set difference operation
+   * @return An array representing a set of the difference operation performed
+   * on the two set parameter variables
+   */
+  public int[] difference(int[] array1, int[] array2){
+    ArrayList<Integer> intList = new ArrayList<Integer>();
+    for (int i = 0; i < array1.length; i++) {
+      if (!(contains(array1[i],array2))){
+        intList.add(array1[i]);
+      }
+    }
+
+    int[] difference = new int[intList.size()];
+
+    for (int i = 0; i < intList.size(); i++) {
+      difference[i] = intList.get(i);
+    }
+
+    return removeDuplicates(difference);
+  }
+
+  /**
+   * The contains method searches a given array for a specific element.
+   * @param item The element to search for
+   * @param array The array to search within
+   * @return True of the element is found within the array parameter variable
+   */
+  public boolean contains(int item, int[] array){
+    for (int i = 0; i < array.length; i++) {
+      if (array[i] == item){
+        return true;
+      }
+    }
+
+    return false;
+  }
 
 }
