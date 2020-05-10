@@ -24,12 +24,14 @@ More Specifically:
   Determining if a list of elements has duplicates or not
   
   Set Operations and Algorithms:
-    Algorithms:
+    
+   Algorithms:
     - Searching a list for duplicates 
     - Getting a list of duplicates 
     - Removing duplicates from a list
     - Combining two arrays 
     - Array contains method
+   
    Set Operations:
     - Union operation 
     - Intersection operation 
