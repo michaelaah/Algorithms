@@ -33,3 +33,4 @@ More Specifically:
   - Combining two arrays 
   - Subset operation
   - Strict subset operation
+  - Difference operation
