@@ -345,7 +345,7 @@ public class SetOperations {
    * The contains method searches a given array for a specific element.
    * @param item The element to search for
    * @param array The array to search within
-   * @return True of the element is found within the array parameter variable
+   * @return True if the element is found within the array parameter variable
    */
   public boolean contains(int item, int[] array){
     for (int i = 0; i < array.length; i++) {
