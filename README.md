@@ -33,9 +33,10 @@ More Specifically:
      - Array contains method
    
    Set Operations:
-     - Union operation 
-     - Intersection operation 
-     - Power set operation
-     - Subset operation
-     - Strict subset operation
-     - Difference operation
+     - Set equality
+     - Union 
+     - Intersection
+     - Power set 
+     - Subset 
+     - Strict subset 
+     - Difference 
