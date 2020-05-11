@@ -356,5 +356,27 @@ public class SetOperations {
 
     return false;
   }
+  
+  /**
+   * The equal method determines if two sets are equal.
+   * @param array1 The first set to test for equality
+   * @param array2 The second set to test for equality
+   * @return true of the sets are equal
+   */
+  public boolean equal(int[] array1, int[] array2){
+    int[] set1 = removeDuplicates(array1);
+    int[] set2 = removeDuplicates(array2);
+
+    if (set1.length != set2.length){
+      return false;
+    } else {
+      for (int i = 0; i < set1.length; i++) {
+        if (set1[i] != set2[i]){
+          return false;
+        }
+      }
+      return true;
+    }
+  }
 
 }
