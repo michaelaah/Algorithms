@@ -194,6 +194,13 @@ public class NumberTheoryCalculator {
     return expoList;
   }
 
+ /**
+   * The contains method searches an Arraylist of Exponential objects and
+   * determines if the list parameter contains the integer parameter in it.
+   * @param number The integer to search the Exponential list for
+   * @param expoList The Exponential list to search
+   * @return True if the Exponential list contains the integer
+   */
   private boolean contains(int number, ArrayList<Exponential> expoList){
     for (int i = 0; i < expoList.size(); i++) {
       if (number == expoList.get(i).getNumber()){
