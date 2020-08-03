@@ -85,6 +85,12 @@ public class NumberTheoryCalculator {
     return true;
   }
 
+  /**
+   * The getLCM method returns the LCM of two parameter variables.
+   * @param a The first number to get the LCM of
+   * @param b The second number to get the LCM of
+   * @return The LCM of the two parameter integers
+   */
   public int getLCM(int a, int b){
     ArrayList<Integer> aList = getPrimeFactors(a);
     ArrayList<Integer> bList = getPrimeFactors(b);
@@ -102,6 +108,13 @@ public class NumberTheoryCalculator {
     return lcm;
   }
 
+  /**
+   * The getLCMList method returns a list denoting the prime factors of the 
+   * LCM of two integer parameters.
+   * @param a The first number to get the lCM of.
+   * @param b The second number to get the LCM of.
+   * @return An ArrayList of Exponential objects of the LCM in prime factor form.
+   */
   public ArrayList<Exponential> getLCMList(int a, int b){
     ArrayList<Integer> aList = getPrimeFactors(a);
     ArrayList<Integer> bList = getPrimeFactors(b);
@@ -112,11 +125,23 @@ public class NumberTheoryCalculator {
      return buildLCMList(aExpoList,bExpoList);
   }
 
+  /**
+   * The removeTHeDuplicate method removes all instances of the integer parameter
+   * variable from the arrayList object.
+   * @param arrayList The arrayList to remove the duplicates from.
+   * @param a The number to remove all duplicates of in the arrayList.
+   */
   public void removeTheDuplicate(ArrayList<Integer> arrayList, int a){
 
     arrayList.removeIf(number -> number == a);
   }
 
+  /**
+   * The getExponentialList method returns an exponential representation of the
+   * list given as input.
+   * @param arrayList The list to represent the numbers in their exponential form
+   * @return A list of numbers in their exponential form
+   */
   public ArrayList<Exponential> getExponentialList(ArrayList<Integer> arrayList){
     ArrayList<Exponential> expoList = new ArrayList<Exponential>();
 
