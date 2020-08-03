@@ -3,6 +3,7 @@
  * factors of a given number and for finding the LCM and GCD of a given 2 numbers.
  * NOTE: This Class is still in progress...
  */
+
 import java.util.ArrayList;
 
 public class NumberTheoryCalculator {
@@ -202,10 +203,14 @@ public class NumberTheoryCalculator {
     return false;
   }
 
+  /**
+   * The sortExpoList function sorts an ArrayList of Exponential objects.
+   * @param expoList The list of Exponential objects to sort
+   */
   private void sortExpoList(ArrayList<Exponential> expoList){
 
     for (int i = 0; i < expoList.size(); i++) {
-      for (int j = i+1; j < expoList.size(); j++) {
+      for (int j = i + 1; j < expoList.size(); j++) {
 
         if (expoList.get(i).getNumber() > expoList.get(j).getNumber()){
           Exponential temp = expoList.get(i);
