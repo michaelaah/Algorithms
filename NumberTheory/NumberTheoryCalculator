@@ -156,6 +156,13 @@ public class NumberTheoryCalculator {
     return expoList;
   }
 
+  /**
+   * The getExpo method takes an ArrayList of integers are returns an Exponential
+   * object representation of the first element in the ArrayList.
+   * @param arrayList The arrayList to get the exponential form of for the first
+   *                  element.
+   * @return The Exponential objet representation of an integer.
+   */
   private Exponential getExpo (ArrayList<Integer> arrayList){
     int number = arrayList.get(0);
     int count = 1;
@@ -170,6 +177,14 @@ public class NumberTheoryCalculator {
     return expo;
   }
 
+  /**
+   * The buildLCMList method takes two Exponential ArrayLists and builds an
+   * Exponential ArrayList that contains the exponential representations of the prime
+   * factors of the LCM.
+   * @param list1 The first list of prime factors to find the LCM for
+   * @param list2 The second list of prime factors to find the LCM for
+   * @return A list of prime factors in exponential form
+   */
   private ArrayList<Exponential> buildLCMList(ArrayList<Exponential> list1,
                                               ArrayList<Exponential> list2){
     ArrayList<Exponential> expoList = new ArrayList<Exponential>();
