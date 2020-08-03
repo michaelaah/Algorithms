@@ -92,10 +92,8 @@ public class NumberTheoryCalculator {
     ArrayList<Exponential> bExpoList = getExponentialList(bList);
 
     ArrayList<Exponential> LCMlist = buildLCMList(aExpoList,bExpoList);
-    System.out.println("LCM List: " + LCMlist);
     int lcm = 1;
     for (int i = 0; i < LCMlist.size(); i++) {
-      System.out.println(lcm + ", value: " + LCMlist.get(i).getValue());
       lcm *= LCMlist.get(i).getValue();
 
     }
@@ -160,9 +158,6 @@ public class NumberTheoryCalculator {
       smallerList = list1;
     }
 
-  //  System.out.println("Bigger " + biggerList);
-  //  System.out.println("Smaller " + smallerList);
-
       for (int i = 0; i < biggerList.size(); i++) {
         int base1 = biggerList.get(i).getNumber();
         int power1 = biggerList.get(i).getPower();
@@ -170,10 +165,8 @@ public class NumberTheoryCalculator {
         for (int j = 0; j < smallerList.size(); j++) {
           int base2 = smallerList.get(j).getNumber();
           int power2 = smallerList.get(j).getPower();
-        //  System.out.println(base2 + "^" + power2);
 
           if (base1 == base2){
-           // System.out.println("Base: " + base1 + " Powers: " + power1 + ", " + power2);
             if (power1 >= power2){
               expoList.add(biggerList.get(i));
             } else {
