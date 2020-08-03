@@ -1,0 +1,228 @@
+/**
+ * This class provides methods for finding the quotient, remainder, and prime
+ * factors of a given number and for finding the LCM and GCD of a given 2 numbers.
+ * NOTE: This Class is still in progress...
+ */
+import java.util.ArrayList;
+
+public class NumberTheoryCalculator {
+
+  public NumberTheoryCalculator(){}
+
+
+  /**
+   * The getPrimeFactors method returns a list of prime factors for a given
+   * parameter variable.
+   * @param num The number to get the prime factors of
+   * @return An ArrayList of prime factors
+   */
+  public ArrayList<Integer> getPrimeFactors(int num){
+    ArrayList<Integer> primeList = new ArrayList<Integer>();
+    if (isPrime(num)){
+      primeList.add(num);
+      primeList.add(1);
+
+      return primeList;
+
+    } else {
+      getFactors(primeList,num);
+
+      return primeList;
+    }
+  }
+
+  /**
+   * The getFactors method fills a parameter ArrayList variable with the
+   * prime factors of the given int parameter variable.
+   * @param primeList The list to add the prime factors to
+   * @param num The integer to find the prime factors of
+   */
+  private void getFactors(ArrayList<Integer> primeList, int num) {
+    if (isPrime(num)) {
+      primeList.add(num);
+
+    } else {
+      int divisor = 2;
+      if (num % divisor == 0) {
+        int quotient = num / divisor;
+        primeList.add(divisor);
+        getFactors(primeList,quotient);
+
+      } else {
+        while (num % divisor != 0) {
+          divisor++;
+        }
+
+        int quotient = num / divisor;
+        primeList.add(divisor);
+        if (! isPrime(quotient)){
+          getFactors(primeList,quotient);
+
+        } else {
+          if (isPrime(quotient)) {
+            primeList.add(quotient);
+          }
+        }
+      }
+    }
+  }
+
+  /**
+   * Tests if a given number n is prime or not.
+   * @param n The number to test if it is prime or not
+   * @return True if the number is prime
+   */
+  public boolean isPrime(int n){
+    if (n < 0){
+      return false;
+    }
+    for (int i = 2; i < n; i++){
+      if (n % i == 0){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public int getLCM(int a, int b){
+    ArrayList<Integer> aList = getPrimeFactors(a);
+    ArrayList<Integer> bList = getPrimeFactors(b);
+
+    ArrayList<Exponential> aExpoList = getExponentialList(aList);
+    ArrayList<Exponential> bExpoList = getExponentialList(bList);
+
+    ArrayList<Exponential> LCMlist = buildLCMList(aExpoList,bExpoList);
+    System.out.println("LCM List: " + LCMlist);
+    int lcm = 1;
+    for (int i = 0; i < LCMlist.size(); i++) {
+      System.out.println(lcm + ", value: " + LCMlist.get(i).getValue());
+      lcm *= LCMlist.get(i).getValue();
+
+    }
+
+    return lcm;
+  }
+
+  public ArrayList<Exponential> getLCMList(int a, int b){
+    ArrayList<Integer> aList = getPrimeFactors(a);
+    ArrayList<Integer> bList = getPrimeFactors(b);
+
+    ArrayList<Exponential> aExpoList = getExponentialList(aList);
+    ArrayList<Exponential> bExpoList = getExponentialList(bList);
+
+     return buildLCMList(aExpoList,bExpoList);
+  }
+
+  public void removeTheDuplicate(ArrayList<Integer> arrayList, int a){
+
+    arrayList.removeIf(number -> number == a);
+  }
+
+  public ArrayList<Exponential> getExponentialList(ArrayList<Integer> arrayList){
+    ArrayList<Exponential> expoList = new ArrayList<Exponential>();
+
+    int size = arrayList.size();
+    while (size > 0){
+      Exponential expo = getExpo(arrayList);
+      expoList.add(expo);
+      removeTheDuplicate(arrayList,arrayList.get(0));
+      size = arrayList.size();
+    }
+
+    return expoList;
+  }
+
+  private Exponential getExpo (ArrayList<Integer> arrayList){
+    int number = arrayList.get(0);
+    int count = 1;
+    for (int i = 1; i < arrayList.size(); i++) {
+      if (arrayList.get(i) == number){
+        count++;
+      }
+    }
+
+    Exponential expo = new Exponential(number,count);
+
+    return expo;
+  }
+
+  private ArrayList<Exponential> buildLCMList(ArrayList<Exponential> list1,
+                                              ArrayList<Exponential> list2){
+    ArrayList<Exponential> expoList = new ArrayList<Exponential>();
+    ArrayList<Exponential> biggerList = null;
+    ArrayList<Exponential> smallerList = null;
+
+    if (list1.size() >= list2.size()){
+      biggerList = list1;
+      smallerList = list2;
+    } else {
+      biggerList = list2;
+      smallerList = list1;
+    }
+
+  //  System.out.println("Bigger " + biggerList);
+  //  System.out.println("Smaller " + smallerList);
+
+      for (int i = 0; i < biggerList.size(); i++) {
+        int base1 = biggerList.get(i).getNumber();
+        int power1 = biggerList.get(i).getPower();
+
+        for (int j = 0; j < smallerList.size(); j++) {
+          int base2 = smallerList.get(j).getNumber();
+          int power2 = smallerList.get(j).getPower();
+        //  System.out.println(base2 + "^" + power2);
+
+          if (base1 == base2){
+           // System.out.println("Base: " + base1 + " Powers: " + power1 + ", " + power2);
+            if (power1 >= power2){
+              expoList.add(biggerList.get(i));
+            } else {
+              expoList.add(smallerList.get(j));
+            }
+          }
+        }
+
+        if (!contains(biggerList.get(i).getNumber(), smallerList)){
+          expoList.add(biggerList.get(i));
+        }
+
+      }
+
+    for (int i = 0; i < smallerList.size(); i++) {
+      if (!contains(smallerList.get(i).getNumber(), biggerList)){
+        expoList.add(smallerList.get(i));
+      }
+
+    }
+
+    sortExpoList(expoList);
+
+    return expoList;
+  }
+
+  private boolean contains(int number, ArrayList<Exponential> expoList){
+    for (int i = 0; i < expoList.size(); i++) {
+      if (number == expoList.get(i).getNumber()){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private void sortExpoList(ArrayList<Exponential> expoList){
+
+    for (int i = 0; i < expoList.size(); i++) {
+      for (int j = i+1; j < expoList.size(); j++) {
+
+        if (expoList.get(i).getNumber() > expoList.get(j).getNumber()){
+          Exponential temp = expoList.get(i);
+          expoList.set(i,expoList.get(j));
+          expoList.set(j,temp);
+        }
+
+      }
+
+    }
+  }
+
+}
