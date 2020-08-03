@@ -1,7 +1,6 @@
 /**
  * This class provides methods for finding the quotient, remainder, and prime
  * factors of a given number and for finding the LCM and GCD of a given 2 numbers.
- * NOTE: This Class is still in progress...
  */
 
 import java.util.ArrayList;
@@ -110,7 +109,31 @@ public class NumberTheoryCalculator {
   }
 
   /**
-   * The getLCMList method returns a list denoting the prime factors of the 
+   * The getGCD method returns the GCD of two parameter variables.
+   * @param a The first number to get the GCD of
+   * @param b The second number to get the GCD of
+   * @return The GCD of the two parameter integers
+   */
+  public int getGCD(int a, int b){
+    ArrayList<Integer> aList = getPrimeFactors(a);
+    ArrayList<Integer> bList = getPrimeFactors(b);
+
+    ArrayList<Exponential> aExpoList = getExponentialList(aList);
+    ArrayList<Exponential> bExpoList = getExponentialList(bList);
+
+    ArrayList<Exponential> GCDList = buildGCDList(aExpoList,bExpoList);
+    int gcd = 1;
+    for (int i = 0; i < GCDList.size(); i++) {
+      gcd *= GCDList.get(i).getValue();
+
+    }
+
+    return gcd;
+
+  }
+
+  /**
+   * The getLCMList method returns a list denoting the prime factors of the
    * LCM of two integer parameters.
    * @param a The first number to get the lCM of.
    * @param b The second number to get the LCM of.
@@ -125,6 +148,26 @@ public class NumberTheoryCalculator {
 
      return buildLCMList(aExpoList,bExpoList);
   }
+
+  /**
+   * The getGCDList method takes two integer parameters and calls the buildGCD list
+   * method after passing the prime factor lists associated with these two integer 
+   * parameters.
+   * @param a The first integer to find the GCD of
+   * @param b The second integer to find the GCD of
+   * @return An Exponential ArrayList object representation of the GCD
+   */
+  public ArrayList<Exponential> getGCDList(int a, int b){
+    ArrayList<Integer> aList = getPrimeFactors(a);
+    ArrayList<Integer> bList = getPrimeFactors(b);
+
+    ArrayList<Exponential> aExpoList = getExponentialList(aList);
+    ArrayList<Exponential> bExpoList = getExponentialList(bList);
+
+    return buildGCDList(aExpoList,bExpoList);
+  }
+
+
 
   /**
    * The removeTHeDuplicate method removes all instances of the integer parameter
@@ -188,6 +231,7 @@ public class NumberTheoryCalculator {
    */
   private ArrayList<Exponential> buildLCMList(ArrayList<Exponential> list1,
                                               ArrayList<Exponential> list2){
+
     ArrayList<Exponential> expoList = new ArrayList<Exponential>();
     ArrayList<Exponential> biggerList = null;
     ArrayList<Exponential> smallerList = null;
@@ -235,7 +279,59 @@ public class NumberTheoryCalculator {
     return expoList;
   }
 
- /**
+  /**
+   * The buildGCDList method creates a list of the exponential form of the GCD numbers
+   * of two Expoonential object arrayLists.
+   * @param list1 The first Exponential object arraylist to find the GCD of
+   * @param list2 The second Exponential object arraylist to find the GCD of
+   * @return A list of the exponential representation of the GCD
+   */
+  private ArrayList<Exponential> buildGCDList(ArrayList<Exponential> list1,
+                                              ArrayList<Exponential> list2){
+
+    ArrayList<Exponential> gcdList = new ArrayList<Exponential>();
+    ArrayList<Exponential> biggerList = null;
+    ArrayList<Exponential> smallerList = null;
+
+    if (list1.size() >= list2.size()){
+      biggerList = list1;
+      smallerList = list2;
+    } else {
+      biggerList = list2;
+      smallerList = list1;
+    }
+
+    for (int i = 0; i < biggerList.size(); i++) {
+      int base1 = biggerList.get(i).getNumber();
+      int power1 = biggerList.get(i).getPower();
+
+      for (int j = 0; j < smallerList.size(); j++) {
+        int base2 = smallerList.get(j).getNumber();
+        int power2 = smallerList.get(j).getPower();
+
+        if (base1 == base2){
+          if (power1 <= power2){
+            gcdList.add(biggerList.get(i));
+          } else {
+            gcdList.add(smallerList.get(j));
+          }
+        }
+      }
+
+    }
+
+    sortExpoList(gcdList);
+
+    if (gcdList.size() == 0){
+      gcdList.add(new Exponential(1,1));
+    }
+
+    return gcdList;
+
+
+  }
+
+  /**
    * The contains method searches an Arraylist of Exponential objects and
    * determines if the list parameter contains the integer parameter in it.
    * @param number The integer to search the Exponential list for
