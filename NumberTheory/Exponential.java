@@ -4,9 +4,11 @@
  */
 public class Exponential {
 
+  // Class Variables
   int number;
   int power;
 
+  // Constructor
   public Exponential(int number, int power){
     this.number = number;
     this.power = power;
