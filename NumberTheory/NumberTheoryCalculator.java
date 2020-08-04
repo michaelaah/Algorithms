@@ -366,5 +366,44 @@ public class NumberTheoryCalculator {
 
     }
   }
+  
+    /**
+   * The getQuotient method returns the quotient of two numbers.
+   * @param a The first number to find the quotient of
+   * @param b The second number to find the quotient of
+   * @return The quotient relating the two numbers
+   */
+  public int getQuotient(int a, int b){
+    if(b < a){
+
+      return a / b;
+    } else {
+
+      return b / a;
+    }
+  }
+
+  /**
+   * The getRemainder method calculates the remainder of two numbers
+   * @param a The first number to find the remainder of
+   * @param b The second number to find the remainder of
+   * @return The remainder relating the two numbers
+   */
+  public int getRemainder(int a, int b){
+    int quotient = getQuotient(a,b);
+    if (a == quotient * b){
+
+      return 0;
+    } else {
+
+      if(a > b) {
+
+        return a - (quotient * b);
+      } else {
+
+        return a;
+      }
+    }
+  }
 
 }
