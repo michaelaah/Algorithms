@@ -53,10 +53,17 @@ public class Exponential {
     return this.number + "^" + this.power;
   }
 
+    /**
+   * The equals method determines if two Exponential objects are equal to
+   * each other or not.
+   * @param number The object to compare to for equality
+   * @return True if the base anf power are the same integers
+   */
   public boolean equals(Object number){
 
     if (number instanceof Exponential){
       Exponential expo = (Exponential) number;
+      
       if (this.number == expo.number && this.power == expo.power ){
 
         return true;
