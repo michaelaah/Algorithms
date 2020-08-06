@@ -405,5 +405,39 @@ public class NumberTheoryCalculator {
       }
     }
   }
+  
+    public int[] getBezoutIdentity(int a, int b){
+    boolean flipped = false;
+    if (b > a){
+      flipped = true;
+      int temp = b;
+      b = a;
+      a = temp;
+    }
+
+    if (b <= 0){
+      int[] baseIdentity = {a,1,0};
+
+      return baseIdentity;
+    } else {
+
+      int quotient = getQuotient(a,b);
+      int remainder = getRemainder(a,b);
+      int[] stepIdentity = getBezoutIdentity(b,remainder);
+      int third = stepIdentity[1] - (quotient * stepIdentity[2]);
+      int[] bezoutIdentity = {stepIdentity[0],stepIdentity[2], third};
+
+      if (flipped){
+        int temp = bezoutIdentity[1];
+        bezoutIdentity[1] = bezoutIdentity[2];
+        bezoutIdentity[2] = temp;
+
+        return bezoutIdentity;
+      } else {
+
+        return bezoutIdentity;
+      }
+    }
+  }
 
 }
