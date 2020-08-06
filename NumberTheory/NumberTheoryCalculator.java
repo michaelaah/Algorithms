@@ -407,6 +407,14 @@ public class NumberTheoryCalculator {
     }
   }
   
+    /**
+   * The getBezoutIdentity method returns the GCD and the two integers that
+   * fulfill the Bezout Identity equation.
+   * @param a The first number to get the Bezout identity of
+   * @param b The second number to get the Bezout identity of
+   * @return An integer array in the order: GCD of a and b, the Bezout identity
+   * of a, and the Bezout identity of b
+   */
     public int[] getBezoutIdentity(int a, int b){
     boolean flipped = false;
     if (b > a){
