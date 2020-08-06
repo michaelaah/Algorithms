@@ -40,3 +40,7 @@ More Specifically:
      - Subset 
      - Strict subset 
      - Difference 
+   
+   Number Theory:
+     - Finding the quotient, remainder, and prime factors of a number
+     - Finding the LCM, GCD, and Bezout Identity of two given numbers
