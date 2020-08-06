@@ -1,6 +1,7 @@
 /**
  * This class provides methods for finding the quotient, remainder, and prime
- * factors of a given number and for finding the LCM and GCD of a given 2 numbers.
+ * factors of a given number and for finding the LCM, GCD, and the Bezout identity
+ * of a given 2 numbers.
  */
 
 import java.util.ArrayList;
