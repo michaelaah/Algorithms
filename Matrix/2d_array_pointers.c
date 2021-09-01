@@ -39,6 +39,12 @@ void printPtrArr(int* array, int rows, int cols)
 
 }
 
+/*
+ * This double_array function takes an int*, allocates memeory for a 2D array of size
+ * rows by cols and inserts 2 times the value in the array parameter at index [i][j]
+ * into index [i][j] of the allocated doubled array. A pointer to the first row of
+ * the doubled 2D array is then returned to the caller.
+ */
 int** double_array(int* array, int rows, int cols)
 {
 	// If array is NULL or either rows or cols is less than 1, return NULL immediately.
@@ -100,7 +106,7 @@ int main (int argc, char** argv)
 	 * This section retrieves an allocaed 2D array (a doubling of all values in the array 
 	 * parameter). 
 	 */
-	int** doubled = double_array(array, 4, 4);
+	int** doubled = double_array(ptr, 4, 4);
 	
 	printf("Doubled array is holding:\n");
 	
