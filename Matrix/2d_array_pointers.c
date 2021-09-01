@@ -39,11 +39,40 @@ void printPtrArr(int* array, int rows, int cols)
 
 }
 
+int** double_array(int* array, int rows, int cols)
+{
+	// If array is NULL or either rows or cols is less than 1, return NULL immediately.
+	if(array == NULL || rows < 1 || cols < 1)
+			return NULL;
+	
+	// Allocate the number of rows in the doubled variable.
+	int** doubled = (int**) malloc(rows * sizeof(int*));
+	
+	// For each row, allocate the number of columns needed to store values.
+	for(int i = 0; i < rows; i++)
+		doubled[i] = (int*) malloc(cols * sizeof(int));
+	
+	// For each row.
+	for(int i = 0; i < rows; i++)
+	{
+		// For each column.
+		for(int j = 0; j < cols; j++)
+		{
+			// Assign the value from array[i][j] * 2 to the doubled 2D array at index [i][j].
+			doubled[i][j] = *(array + i * cols + j) * 2;	
+		}
+	}
+	
+	// Return the address to the first index of the doubles 2D array.
+	return &doubled[0];
+	
+}
+
 int main (int argc, char** argv)
 {
 	int array[4][4];
-	RAW = 4;
-	CAL = 4;
+	RAW       = 4;
+	CAL       = 4;
 	int count = 0;
 	
 	for(int i = 0; i < 4; i++)
@@ -67,5 +96,23 @@ int main (int argc, char** argv)
 	int* ptr = &array[0][0];
 	printPtrArr(ptr, 4, 4);
 
+	/*
+	 * This section retrieves an allocaed 2D array (a doubling of all values in the array 
+	 * parameter). 
+	 */
+	int** doubled = double_array(array, 4, 4);
+	
+	printf("Doubled array is holding:\n");
+	
+	for(int i = 0; i < 4; i++)
+	{
+		for(int j = 0; j < 4; j++)
+		{
+			printf("%d ", doubled[i][j]);	
+		}
+		printf("\n");
+	}
+	
+	
 	return 0;
 }
