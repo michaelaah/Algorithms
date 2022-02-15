@@ -68,13 +68,13 @@ public class TimSort {
 
         for (int i = left + 1; i < right; i++) {
             int current = arr[i];
-            int j = i - 1;
+            int j       = i - 1;
 
             while (j >= left && current < arr[j]) {
                 arr[j + 1] = arr[j];
                 j--;
             }
-            arr[j+1] = current;
+            arr[j + 1] = current;
         }
     }
     
@@ -115,14 +115,14 @@ public class TimSort {
         }
 
         // If there are any elements left over in the left sub array, add them to array arr.
-        while (leftIter < leftArr.length-1){
+        while (leftIter < leftArr.length - 1){
             arr[arrIter] = leftArr[leftIter];
             leftIter++;
             arrIter++;
         }
 
         // If there are any elements left over in the right sub array, add them to array arr.
-        while (rightIter < rightArr.length-1){
+        while (rightIter < rightArr.length - 1){
             arr[arrIter] = rightArr[rightIter];
             rightIter++;
             arrIter++;
