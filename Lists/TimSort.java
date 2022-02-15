@@ -10,6 +10,7 @@ public class TimSort {
 
             // Else, break array into sub blocks sort, then merge sort the sub blocks.
         } else {
+            
             // Calculate the number of subBlocks in array.
             int subBlocks = array.length / MIN_BLOCK_SIZE;
 
@@ -18,7 +19,7 @@ public class TimSort {
 
                 // Calculate the begin and end indices.
                 int begin = i * MIN_BLOCK_SIZE;
-                int end = begin + MIN_BLOCK_SIZE;
+                int end   = begin + MIN_BLOCK_SIZE;
 
                 // Pass the array and begin and end indexes into the insertionSort algorithm.
                 insertionSortRange(array,begin,end);
