@@ -1,3 +1,12 @@
+/**
+ * This class holds the TimSort algorithm, a blend of both Insertion Sort and Merge Sort.
+ * 
+ * Description: The algorithm breaks up the list to sort into segments of size 32 (the last 
+ * segment may be some size les than 32). Insertion sort is then performed within each of
+ * the segments. After each segment has been sorted, merge sort is used to sort all segments,
+ * merging them into one large sorted list in non decreasing order.
+ */
+
 public class TimSort {
 
     static final int MIN_BLOCK_SIZE = 32;
@@ -48,7 +57,12 @@ public class TimSort {
             }
         }
     }
-
+    /**
+     * The insertionSortRange algorithm performs Insertion Sort over a range [left, right] of a larger array (arr).
+     * int[] arr The array to be sorted.
+     * int left The index of the left end of the array, the left most end to consider for sorting.
+     * int right The index of the right end of the array, the right most end to consider for sorting.
+     */
     // Insertion sort algorithm modified to sort over the range from left to right in the arr array.
     public static void insertionSortRange(int[] arr, int left, int right){
 
@@ -63,7 +77,14 @@ public class TimSort {
             arr[j+1] = current;
         }
     }
-
+    
+    /**
+     * The mergeRange algorithm performs Merge Sort over a range [left, right] of a larger array (arr).
+     * int[] arr The array to be sorted.
+     * int left The index of the left end of the array, the left most end to consider for sorting.
+     * int mid The mid point of the elements to consider for sorting, demarcating the left and right sides.
+     * int right The index of the right end of the array, the right most end to consider for sorting.
+     */
     public static void mergeRange(int[] arr, int left, int mid, int right){
         int[] leftArr  = new int[mid - left + 1];
         int[] rightArr = new int[right - mid];
