@@ -2,7 +2,7 @@
  * This class holds the TimSort algorithm, a blend of both Insertion Sort and Merge Sort.
  * 
  * Description: The algorithm breaks up the list to sort into segments of size 32 (the last 
- * segment may be some size les than 32). Insertion sort is then performed within each of
+ * segment may be some size less than 32). Insertion sort is then performed within each of
  * the segments. After each segment has been sorted, merge sort is used to sort all segments,
  * merging them into one large sorted list in non decreasing order.
  */
@@ -63,7 +63,6 @@ public class TimSort {
      * int left The index of the left end of the array, the left most end to consider for sorting.
      * int right The index of the right end of the array, the right most end to consider for sorting.
      */
-    // Insertion sort algorithm modified to sort over the range from left to right in the arr array.
     public static void insertionSortRange(int[] arr, int left, int right){
 
         for (int i = left + 1; i < right; i++) {
