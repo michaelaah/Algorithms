@@ -1,3 +1,8 @@
+ /* 
+  * This program computes an optimal String alignment in one pass through the matrix in quadratic time by implementing
+  * a band on the double for loops. This band is equal to the edit distance computed from cell (1,1).
+  */
+
 public class StringAlignment{
 
   public static void main(String[] args) {
@@ -17,21 +22,21 @@ public class StringAlignment{
         String [][] bottom = new String[lengthN][lengthM];
 
         // Starting Position is 2 empty strings.
-        top[0][0] = "";
+        top[0][0]    = "";
         bottom[0][0] = "";
 
         // For the first column of the matrix, insert i into [i][0].
         for (int i = 1; i < lengthN; i++) {
             strMatrix[i][0] = i;
-            top[i][0] = top[i-1][0] + str1.charAt(i-1);
-            bottom[i][0] = "-" + bottom[i-1][0];
+            top[i][0]       = top[i-1][0] + str1.charAt(i-1);
+            bottom[i][0]    = "-" + bottom[i-1][0];
         }
 
         // For the first row of the matrix, insert i into [0][i].
         for (int i = 1; i < lengthM; i++) {
             strMatrix[0][i] = i;
-            top[0][i] = "-" + top[0][i-1];
-            bottom[0][i] = bottom[0][i-1] + str2.charAt(i-1);
+            top[0][i]       = "-" + top[0][i-1];
+            bottom[0][i]    = bottom[0][i-1] + str2.charAt(i-1);
         }
 
         // Set the initial band to be the minimum of the lengths of the two strings to be aligned.
@@ -57,14 +62,12 @@ public class StringAlignment{
                 // Index (i,j) in the matrix is equal to the returned minimum of these three values.
                 strMatrix[i][j] = min(leftSide, topSide, diagonal);
 
-                // CHANGE HERE:
                 /*
                  * If i minus j is within the band and if j minus i is within the outerBand, then enter the if statement
                  * and determine the appropriate values to be stored in top and bottom.
                  */
                 if(i - j < band  && j - i < outerBand){
-
-                    // CHANGE HERE:
+                  
                     /*
                      * If i or j minus the band is less than or equal to the band, update the band value.
                      * This band value should only be updated when traversing through the matrix within
@@ -79,14 +82,17 @@ public class StringAlignment{
                      * String value from top and bottom into that [i][j] position.
                      */
                     if (strMatrix[i][j] == diagonal) {
-                        top[i][j] = top[i - 1][j - 1] + str1.charAt(i - 1);
+                        top[i][j]    = top[i - 1][j - 1] + str1.charAt(i - 1);
                         bottom[i][j] = bottom[i - 1][j - 1] + str2.charAt(j - 1);
+                    
                     } else {
+                      
                         if (strMatrix[i][j] == leftSide) {
-                            top[i][j] = top[i][j - 1] + "-";
+                            top[i][j]    = top[i][j - 1] + "-";
                             bottom[i][j] = bottom[i][j - 1] + str2.charAt(j - 1);
+                    
                         } else {
-                            top[i][j] = top[i - 1][j] + str1.charAt(i - 1);
+                            top[i][j]    = top[i - 1][j] + str1.charAt(i - 1);
                             bottom[i][j] = bottom[i - 1][j] + "-";
                         }
                     }
@@ -149,7 +155,6 @@ public class StringAlignment{
         // return the Math.min value of the three parameters.
         return Math.min(Math.min(a,b),c);
     }
-
 
     /**
      * The stringMtx generates and returns a String representation of the matrix parameter.
