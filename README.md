@@ -31,6 +31,7 @@ More Specifically:
      - Removing duplicates from a list
      - Combining two arrays 
      - Array contains method
+     - Optimal String Alignment
    
    Set Operations:
      - Set equality
