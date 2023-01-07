@@ -1,5 +1,5 @@
 /**
- * The algorithm below sorts an integer array in ascendig order
+ * The algorithm below sorts an integer array in ascending order
  * (where the lowest integer is at the top of the array or in the first index).
  */
 public class SortingAnArray {
